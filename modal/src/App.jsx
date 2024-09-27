@@ -27,7 +27,7 @@ function App() {
         [schema.value]: schema.label,
       })),
     };
-    const weburl = "http://localhost:5000/forward";
+    const weburl = "https://customerlabs.free.beeceptor.com";
 
 
     console.log(payload);
