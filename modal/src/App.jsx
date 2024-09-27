@@ -35,22 +35,24 @@ function App() {
       console.log("Response:", res);
     } catch (error) {
       if (error.response) {
-       
         console.log("Response data:", error.response.data);
         console.log("Response status:", error.response.status);
         console.log("Response headers:", error.response.headers);
       } else if (error.request) {
-      
         console.log("Request made, no response received:", error.request);
       } else {
-    
         console.log("Error", error.message);
       }
       console.log("Config:", error.config);
     }
-    
+
+    setAvailableSchemas(schemaOptions);
+
+    setSelectedschemas([]);
+    setModal(false);
+    setCurrent("");
   };
-  
+
   const handleaddschema = () => {
     if (current) {
       const schema = availableSchemas.find((s) => s.value === current);

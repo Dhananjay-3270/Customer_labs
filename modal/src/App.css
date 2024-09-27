@@ -102,34 +102,32 @@
   width: 80%;
   height: 25px;
   margin: 5px;
-
 }
 .Schema-input-box {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
 }
-.removeicon{
-
-cursor: pointer;
-
-}.save-btn{
-width: 130px;
-height: 35px;
-background-color: rgb(21, 214, 214);
-color: white;
-border :transparent;
-border-radius: 5px;
-cursor: pointer;
+.removeicon {
+  cursor: pointer;
 }
-.cancel-btn{
+.save-btn {
+  width: 130px;
+  height: 35px;
+  background-color: rgb(21, 214, 214);
+  color: white;
+  border: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cancel-btn {
   width: 80px;
   height: 25px;
-  border :transparent;
-border-radius: 5px;
-background-color: white;
-color: red ;
-cursor: pointer;
-  }
+  border: transparent;
+  border-radius: 5px;
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}
