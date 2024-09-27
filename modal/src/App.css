@@ -5,38 +5,114 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.container {
+  display: flex;
+  justify-content: space-between;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.modal {
+  background-color: rgb(241, 240, 240);
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.heading {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  background-color: rgb(21, 214, 214);
+  color: white;
+  font-size: medium;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.backicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  cursor: pointer;
 }
 
-.card {
-  padding: 2em;
+.btn-div {
+  width: 120px;
+  height: 50px;
+  background-color: rgb(21, 214, 214);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn-div button {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(21, 214, 214);
+
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.input-text {
+  padding-right: 200px;
+}
+.input-box {
+  width: 80%;
+}
+.usertraits {
+  display: flex;
+  justify-content: flex-end;
+}
+.dot-container {
+  width: 80px;
+  height: 40px;
+}
+.dot {
+  width: 10px; /* Adjust size between 8px - 12px */
+  height: 10px;
+  border-radius: 50%;
+}
+.Schema-input {
+  margin-top: 20px;
+}
+/* Red dot */
+.group {
+  background-color: red;
 }
 
-.read-the-docs {
-  color: #888;
+/* Green dot */
+.user {
+  background-color: green;
+}
+
+.add-btn {
+  padding: 10px;
+  height: 25px;
+  background-color: rgb(241, 240, 240);
+  border: transparent;
+  cursor: pointer;
+  color: blue;
+}
+.schemas {
+  width: 80%;
+  height: 35px;
+}
+
+.schema-input {
+  width: 80%;
+  height: 25px;
+  margin: 5px;
+
+}
+.Schema-input-box {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;  
+}
+.removeicon{
+
+cursor: pointer;
+
 }
