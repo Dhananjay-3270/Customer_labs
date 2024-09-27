@@ -115,4 +115,21 @@
 
 cursor: pointer;
 
+}.save-btn{
+width: 130px;
+height: 35px;
+background-color: rgb(21, 214, 214);
+color: white;
+border :transparent;
+border-radius: 5px;
+cursor: pointer;
 }
+.cancel-btn{
+  width: 80px;
+  height: 25px;
+  border :transparent;
+border-radius: 5px;
+background-color: white;
+color: red ;
+cursor: pointer;
+  }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
+import axios from "axios";
 import "./App.css";
 
 const schemaOptions = [
@@ -19,7 +20,37 @@ function App() {
   const [segmentName, setSegmentName] = useState("");
   const [selectedschemas, setSelectedschemas] = useState([]);
   const [current, setCurrent] = useState("");
+  const savedata = async () => {
+    const payload = {
+      segment_name: segmentName,
+      schema: selectedschemas.map((schema) => ({
+        [schema.value]: schema.label,
+      })),
+    };
+    const weburl = "https://webhook.site/abd2a109-6068-4d88-9f76-9b764303d90d";
 
+    console.log(payload);
+    try {
+      const res = await axios.post(weburl, payload);
+      console.log("Response:", res);
+    } catch (error) {
+      if (error.response) {
+       
+        console.log("Response data:", error.response.data);
+        console.log("Response status:", error.response.status);
+        console.log("Response headers:", error.response.headers);
+      } else if (error.request) {
+      
+        console.log("Request made, no response received:", error.request);
+      } else {
+    
+        console.log("Error", error.message);
+      }
+      console.log("Config:", error.config);
+    }
+    
+  };
+  
   const handleaddschema = () => {
     if (current) {
       const schema = availableSchemas.find((s) => s.value === current);
@@ -38,12 +69,10 @@ function App() {
   };
 
   const removeschema = (index) => {
-  
     const removedSchema = selectedschemas[index];
     const updatedSchemas = selectedschemas.filter((_, i) => i !== index);
     setSelectedschemas(updatedSchemas);
 
-  
     setAvailableSchemas([...availableSchemas, removedSchema]);
   };
 
@@ -56,7 +85,7 @@ function App() {
         {modal && (
           <div className="modal">
             <div className="heading">
-              <div className="backicon">
+              <div className="backicon" onClick={() => setModal(false)}>
                 <IoIosArrowBack />
               </div>
               <h2>Saving Segment</h2>
@@ -124,8 +153,12 @@ function App() {
               </div>
             </div>
             <div>
-              <button>Save the Segment</button>
-              <button onClick={() => setModal(false)}>Cancel</button>
+              <button className="save-btn" onClick={() => savedata()}>
+                Save the Segment
+              </button>
+              <button className="cancel-btn" onClick={() => setModal(false)}>
+                Cancel
+              </button>
             </div>
           </div>
         )}
