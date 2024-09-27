@@ -27,7 +27,8 @@ function App() {
         [schema.value]: schema.label,
       })),
     };
-    const weburl = "https://webhook.site/abd2a109-6068-4d88-9f76-9b764303d90d";
+    const weburl = "http://localhost:5000/forward";
+
 
     console.log(payload);
     try {
@@ -43,7 +44,7 @@ function App() {
       } else {
         console.log("Error", error.message);
       }
-      console.log("Config:", error.config);
+      
     }
 
     setAvailableSchemas(schemaOptions);
